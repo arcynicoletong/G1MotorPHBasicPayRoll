@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author ArcyNicoleTong
+ * @author Group1
  */
 public class MotorPHPayRoll {
     public static void main(String[] args) {

@@ -503,7 +503,6 @@ Why essential: It displays and follows rules, and clearly shows that all deducti
 ##  Project Overview
 This program computes employee payroll using a structured method-based approach. 
 It reads employee data from a CSV file and calculates gross pay, deductions, and net pay.
-`MotorPH_Employee Data - Employee Details.csv`
 
 ---
 
@@ -513,7 +512,7 @@ It reads employee data from a CSV file and calculates gross pay, deductions, and
 - Calculates SSS, PhilHealth, PAG-IBIG
 - Computes withholding tax
 - Calculates total deductions
-- Displays computed net pay
+- Displays net pay
 - Handles Employee and Staff sessions
 
 ---
@@ -528,22 +527,21 @@ It reads employee data from a CSV file and calculates gross pay, deductions, and
 
 ---
 
-##  Methods Structure
-**METHOD 1:** Display Employee Information  
-**METHOD 2:** Data Parsing  
-**METHOD 3:** Worked Hours Computation  
-**METHOD 4:** Unpaid Lunch Overlap Calculation  
-**METHOD 5:** SSS Calculation  
-**METHOD 6:** PhilHealth Calculation  
-**METHOD 7:** PAG-IBIG Calculation  
-**METHOD 8:** Withholding Tax Calculation  
-**METHOD 9:** Employee Session Handler  
-**METHOD 10:** Staff Session Handler  
-**METHOD 11:** Payroll Calculator  
-**METHOD 12:** Main Method  
+## Methods Structure
+
+- METHOD 1: Display Employee Information  
+- METHOD 2: Data Parsing  
+- METHOD 3: Worked Hours Computation  
+- METHOD 4: Unpaid Lunch Overlap Calculation  
+- METHOD 5: SSS Calculation  
+- METHOD 6: PhilHealth Calculation  
+- METHOD 7: PAG-IBIG Calculation  
+- METHOD 8: Withholding Tax Calculation  
+- METHOD 9: Employee Session Handler  
+- METHOD 10: Staff Session Handler  
+- METHOD 11: Payroll Calculator  
+- METHOD 12: Main Method  
 ---
-## Commit
-Add explanation of program logic and list of methods
 
 ##  File Structure
 
@@ -552,3 +550,4 @@ MotorPHPayRoll/
 ├── MotorPH_Employee Data - Employee Details.csv  
 ├── PayrollSystem.java  
 └── README.md
+

@@ -1,19 +1,19 @@
 # **MotorPH Basic Payroll (Group 1)**
 
 
+Computer Programming 1 (Milestone 2)
 
-CP1 (Milestone 2)
+Anna Veronica Cortes
+Arcy Nicole Tong
+Gwyneth Quisora
+John Kenneth Marta
+Niña Fatima Bartolome
 
 
+This program reads employee details and attendance from CSV files, enforces MotorPH time rules to compute hours per cutoff, then calculates gross, government deductions (computed monthly from the combined cutoffs), and net pay - with no rounding. It covers June to December 2024. It also includes a login that branches into employee and payroll_staff users.
 
-This program reads employee details and attendance from CSV files, enforces MotorPH time rules to compute hours per cutoff, then calculates gross, government deductions (computed monthly from the combined cutoffs), and net pay - with no rounding. It covers June to December 2024. It also includes a login that branches into employee and payroll\_staff menus.
-
-
-
- 	CSV structure reference:
-
+CSV structure reference:
  		• MotorPH - Employee Details.csv includes: Employee #, Last Name, First Name, Birthday, …, Gross Semi-monthly Rate, Hourly Rate (hourly rate is the last column)
-
  		• MotorPH - Attendance Record.csv includes: Employee #, Last Name, First Name, Date, Log In, Log Out with Date = MM/DD/YYYY, Time = H:mm (24‑hour), spanning June–December 2024.
 
 
@@ -497,4 +497,5 @@ Why essential: It displays and follows rules, and clearly shows that all deducti
         username: payroll_staff
         password: 12345 
 3. Follow the on‑screen menu.
+
 

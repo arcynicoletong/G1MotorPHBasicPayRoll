@@ -699,9 +699,9 @@ public static void main(String[] args) {
 ## Final Notes
 
 - No rounding is applied to any calculations.
-- Time paid window is strictly 08:00–17:00.
-- Payroll is always processed from June–December 2024.
-- No OOP concepts were applied in this implementation (because the team does not know anythign either >.<).
+- Time paid window is strictly from 08:00 to 17:00 only.
+- Payroll is always processed althroughout June to December 2024.
+- No OOP concepts were applied in this implementation (because the team does not know any of those concepts either >.<).
   
 ---
 
@@ -721,6 +721,7 @@ The data files are in CSV format and must be placed inside the Resources folder.
 The team have had many challenges in aligning their schedules and learning paces together, but remained as one to meet the MotorPH's project deadline. Below is the latest project plan of the team, updated as of March 05, 2022.
 
 Project Plan link: https://docs.google.com/spreadsheets/d/1Lux9k8_aYuvp0zqG6S2VvVciuUxU-RZNWELsfzmeJYs/edit?usp=drive_link
+
 
 
 

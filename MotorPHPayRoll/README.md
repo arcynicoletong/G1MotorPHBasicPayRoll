@@ -107,8 +107,6 @@ Payroll output includes:
 
 The team coded the program in a highly organized manner. It follows the common project standard where all the definitive and declarative methods come before the main method. The program is divided and sequenced into the following methods:
 
-### Method List
-
 1. Display Employee Information  
 2. Data Parsing  
 3. Worked Hours Computation  
@@ -127,6 +125,7 @@ The team coded the program in a highly organized manner. It follows the common p
 ---
 
 ## Package Declaration
+The package declaration or the folder path for our project.
 
 ```java
 package com.motorphpayroll.motorphpayroll;
@@ -137,18 +136,19 @@ package com.motorphpayroll.motorphpayroll;
 ## Imports
 
 ```java
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.time.Duration;
-import java.time.LocalTime;
-import java.time.YearMonth;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
+import java.io.BufferedReader;				// This handles the CSV files so we can read them line by line.
+import java.io.FileReader;					// This serves as the "key" that opens the file so the BuffereReader can work.
+import java.time.Duration;					// This tool measures the exact gap (duration) between a clock-in and a clock-out time.
+import java.time.LocalTime;					// We use this to create "time objects" so the program understands 8:00 AM is a time, not just text.
+import java.time.YearMonth;					// This helps us handle calendar logic, like checking if a month has 30 or 31 days for the cutoff.
+import java.time.format.DateTimeFormatter;	// This is our "translator" that turns text from the CSV (like "08:30") into a real Java time object.
+import java.util.Scanner;					// As taught in our synchronous class, this tool that lets the program "read" to what the user types into the console.
 ```
 
 ---
 
 ## Main Class
+This is the main class which holds the entirety of the program’s code
 
 ```java
 public class MotorPHPayrollSystem { }
@@ -570,22 +570,7 @@ static void handleStaffSession(Scanner scanner, String empFile, String attFile, 
 
 ---
 
-### Method 2: Data Parsing
-Safely converts CSV strings into `double` values.
-
-```java
-static double tryParseDouble(String value) {
-    try {
-        return Double.parseDouble(value.replace(""", "").trim());
-    } catch (Exception e) {
-        return 0.0; // If data is missing/broken, we return 0.0 to prevent errors. 
-    }
-}
-```
-
----
-
-### k.	Method 11: Payroll Calculator  
+### Method 11: Payroll Calculator  
 This method executes the mathematical processing of employee earnings. It connects the attendance records with all the previous math methods (i.e. the calculators for SSS, PhilHealth, Pag-IBIG, and Tax)
 
 ```java
@@ -738,4 +723,5 @@ public static void main(String[] args) {
 The team have had many challenges in aligning their schedules and learning paces together, but remained as one to meet the MotorPH's project deadline. Below is the latest project plan of the team, updated as of March 05, 2022.
 
 Project Plan link: https://docs.google.com/spreadsheets/d/1Lux9k8_aYuvp0zqG6S2VvVciuUxU-RZNWELsfzmeJYs/edit?usp=drive_link
+
 

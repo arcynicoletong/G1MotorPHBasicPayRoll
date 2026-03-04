@@ -134,6 +134,7 @@ package com.motorphpayroll.motorphpayroll;
 ---
 
 ## Imports
+The following packages are imported to serve specific purposes with our code.
 
 ```java
 import java.io.BufferedReader;				// This handles the CSV files so we can read them line by line.
@@ -723,5 +724,6 @@ public static void main(String[] args) {
 The team have had many challenges in aligning their schedules and learning paces together, but remained as one to meet the MotorPH's project deadline. Below is the latest project plan of the team, updated as of March 05, 2022.
 
 Project Plan link: https://docs.google.com/spreadsheets/d/1Lux9k8_aYuvp0zqG6S2VvVciuUxU-RZNWELsfzmeJYs/edit?usp=drive_link
+
 
 

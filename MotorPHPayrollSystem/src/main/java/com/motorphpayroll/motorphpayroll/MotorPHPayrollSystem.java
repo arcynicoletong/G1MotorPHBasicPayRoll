@@ -21,13 +21,14 @@ import java.util.Scanner;
 public class MotorPHPayrollSystem {
     
     /* ----------------------- METHOD 1: FILE READER -------------------------
-     * This method reads a file and stores the information in a multidimensional
-     * String array.
+     * This method reads a file and stores the information in an
+     * ArrayList of String arrays.
     */
     static void readFile(String filename, ArrayList<String[]> data) {
         String row;
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filename));
+			reader.readLine();
             while ((row = reader.readLine()) != null) {
                 String[] dataFields = row.split(",");
                 data.add(dataFields);

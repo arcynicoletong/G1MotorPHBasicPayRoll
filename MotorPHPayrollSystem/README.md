@@ -129,6 +129,7 @@ import java.time.Duration;					// This tool measures the exact gap (duration) be
 import java.time.LocalTime;					// We use this to create "time objects" so the program understands 8:00 AM is a time, not just text.
 import java.time.YearMonth;					// This helps us handle calendar logic, like checking if a month has 30 or 31 days for the cutoff.
 import java.time.format.DateTimeFormatter;	// This is our "translator" that turns text from the CSV (like "08:30") into a real Java time object.
+import java.util.ArrayList;					// ArrayLists are used to store the CSV files, where each element is a String array.
 import java.util.Scanner;					// As taught in our synchronous class, this is the tool  that lets the program read what the user types into the console.
 ```
 
@@ -145,7 +146,29 @@ public class MotorPHPayrollSystem { }
 
 ## Method Breakdown
 
-### Method 1: Display Employee Information
+### Method 1: File Reader
+This method reads a file and stores the information in an ArrayList of String arrays.
+
+```java
+static void readFile(String filename, ArrayList<String[]> data) {
+	String row;
+	try {
+		BufferedReader reader = new BufferedReader(new FileReader(filename));
+		reader.readLine();
+		while ((row = reader.readLine()) != null) {
+			String[] dataFields = row.split(",");
+			data.add(dataFields);
+		}
+		reader.close();
+	} catch (Exception e) {
+		System.out.println("An error occurred while reading the file (" + filename + "): + e");
+	}
+}
+```
+
+---
+
+### Method 2: Display Employee Information
 This method displays employee information and is designed to be reused in payroll_staff sessions as employee salary information header.
 
 ```java
@@ -160,7 +183,7 @@ static void displayProfileHeader(String[] data) {
 
 ---
 
-### Method 2: Data Parsing
+### Method 3: Data Parsing
 This method converts a String from the CSV file into a double number. It removes quotes and whitespace from the input to ensure correct parsing.
 
 ```java
@@ -175,7 +198,7 @@ static double tryParseDouble(String value) {
 
 ---
 
-### Method 3: Worked Hours Computation
+### Method 4: Worked Hours Computation
 This method calculates the total hours worked by an employee during a shift. 
 It strictly counts time between 8:00 AM and 5:00 PM and applies a 10-minute grace period. 
 Logins before 8:11 AM are treated as 8:00 AM as instructed.
@@ -206,7 +229,7 @@ static double computeHours(LocalTime loginTime, LocalTime logoutTime) {
 
 ---
 
-### Method 4: Unpaid Lunch Overlap Calculation
+### Method 5: Unpaid Lunch Overlap Calculation
 This method determines the number of minutes where two (2) time intervals overlap (i.e. the whole day worked hours and the 1-hour unpaid lunch).
 Our team used this method to avoid improper time deduction.
 
@@ -231,7 +254,7 @@ static double calculateOverlap(LocalTime startA, LocalTime endA, LocalTime start
 
 ---
 
-### Method 5: SSS Calculation  
+### Method 6: SSS Calculation  
 This methdod computes the monthly SSS contribution based on gross salary. It utilizes the bracketed contribution table and enforces a maximum cap.
 
 ```java
@@ -268,7 +291,7 @@ static double computeSSS(double monthlyGross) {
 
 ---
 
-### Method 6: PhilHealth Calculation  
+### Method 7: PhilHealth Calculation  
 This method calculates the PhilHealth premium share for an employee. It applies a 3% premium rate with a minimum cap of 300 and a maximum of 1800.
 
 ```java
@@ -301,7 +324,7 @@ static double computePhilHealth(double monthlyGross) {
 
 ---
 
-### Method 7: PagIBIG Calculation
+### Method 8: PagIBIG Calculation
 This method calculates the Pag-IBIG contribution for an employee. It applies tiered rates based on income level and caps at 100 pesos.
 
 ```java
@@ -341,7 +364,7 @@ static double computePagIbig(double monthlyGross) {
 
 ---
 
-### Method 8: Withholding Tax Calculation  
+### Method 9: Withholding Tax Calculation  
 This method determines the monthly withholding tax using the tax table. Tax is computed on income remaining after statutory deductions.
 
 ```java
@@ -383,7 +406,7 @@ static double computeWithholdingTax(double taxableIncome) {
 
 ---
 
-### Method 9: Employee Session Handler 
+### Method 10: Employee Session Handler 
 This method manages the interactive menu for users with the "employee" role. It handles profile retrieval and secure logout procedures.
 
 ```java
@@ -459,7 +482,7 @@ static void handleEmployeeSession(Scanner scanner, String employeeFilePath) {
 
 ---
 
-### Method 10: Payroll Staff Session Handler 
+### Method 11: Payroll Staff Session Handler 
 This method manages the interactive menu for users with the "payroll_staff" role. It provides processing options for single or bulk employee payroll.
 
 
@@ -541,7 +564,7 @@ static void handleStaffSession(Scanner scanner, String empFile, String attFile, 
 
 ---
 
-### Method 11: Payroll Calculator  
+### Method 12: Payroll Calculator  
 This method executes the mathematical processing of employee earnings. It connects the attendance records with all the previous math methods (i.e. the calculators for SSS, PhilHealth, Pag-IBIG, and Tax)
 
 ```java
@@ -611,7 +634,7 @@ static void executePayrollLogic(String[] employeeInfo, String attendanceFile, Da
 
 ---
 
-### Method 12: Terminate Session
+### Method 13: Terminate Session
 This method simply terminates the prorgam but the team decided to turn it into its own method to print a short message and make it reusable.
 
 ```java
@@ -623,7 +646,7 @@ static void terminateSession() {
 
 ---
 
-### Method 13: Finalize Payroll
+### Method 14: Finalize Payroll
 This method prints a short message to inform the user that the payroll processing is successful. It is also designed to be a reusable method.
 
 ```java
@@ -636,7 +659,7 @@ static void finalizePayrollProcess() {
 
 ---
 
-### Method 14: Main Method 
+### Method 15: Main Method 
 The main method is the program's entry point which initializes file paths, handles the login authentication, and routes the user to the appropriate session handler based on their credentials.
 
 ```java
@@ -705,6 +728,7 @@ The data files are in CSV format and must be placed inside the Resources folder.
 The team have had many challenges in aligning their schedules and learning paces together, but remained as one to meet the MotorPH's project deadline. Below is the latest project plan of the team, updated as of March 05, 2022.
 
 Project Plan link: https://docs.google.com/spreadsheets/d/1Lux9k8_aYuvp0zqG6S2VvVciuUxU-RZNWELsfzmeJYs/edit?usp=drive_link
+
 
 
 

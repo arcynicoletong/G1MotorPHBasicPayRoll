@@ -55,6 +55,9 @@ public class MotorPHPayrollSystem {
     /* --------------- METHOD 2: DISPLAY EMPLOYEE INFORMATION -----------------
      * This method displays employee information and is designed to be reused 
      * in payroll_staff sessions as employee salary information header.
+     * PURPOSE: Reusable header when showing employee identity information.
+     * WHY change: use "employeeFields" (clearer than generic "data")
+    
     */
     static void displayProfileHeader(String[] data) {
         System.out.println("\n===================================");

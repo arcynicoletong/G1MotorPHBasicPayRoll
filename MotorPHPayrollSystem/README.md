@@ -31,7 +31,7 @@ From here, the user will be asked to log in using their credentials and choose t
 
 ## User Workflow
 
-Here's the step-by-step description of how the program works from the outsise (through the console).
+Here's the step-by-step description of how the program works from the outside (through the console).
 
 ### 1. User Log-in
 
@@ -326,7 +326,7 @@ static double computePhilHealth(double monthlyGross) {
 ---
 
 ### Method 8: PagIBIG Calculation
-This method calculates the Pag-IBIG contribution for an employee. It applies tiered rates based on income level and caps at 100 pesos.
+This method calculates the Pag-IBIG contribution for an employee. It applies tiered rates based on income level, capped at 100 pesos.
 
 ```java
 static double computePagIbig(double monthlyGross) {
@@ -622,7 +622,7 @@ static void executePayrollLogic(String[] employeeInfo, String attendanceFile, Da
 ---
 
 ### Method 13: Terminate Session
-This method simply terminates the prorgam but the team decided to turn it into its own method to print a short message and make it reusable.
+This method simply terminates the program but the team decided to turn it into its own method to print a short message and make it reusable.
 
 ```java
 static void terminateSession() {
@@ -715,6 +715,7 @@ The data files are in CSV format and must be placed inside the Resources folder.
 The team have had many challenges in aligning their schedules and learning paces together, but remained as one to meet the MotorPH's project deadline. Below is the latest project plan of the team, updated as of March 05, 2022.
 
 Project Plan link: https://docs.google.com/spreadsheets/d/1Lux9k8_aYuvp0zqG6S2VvVciuUxU-RZNWELsfzmeJYs/edit?usp=drive_link
+
 
 
 

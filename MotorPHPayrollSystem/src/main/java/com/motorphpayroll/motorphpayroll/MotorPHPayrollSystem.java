@@ -361,8 +361,9 @@ public class MotorPHPayrollSystem {
     }
 
     /* ------------------- METHOD 13: TERMINATE SESSION ------------------------
-     * This method simply terminates the program but the team decided to turn it
+      * This method simply terminates the program but the team decided to turn it
      * into its own method to print a short message and make it reusable.
+     * PURPOSE: End program gracefully.
     */
     static void terminateSession() {
 	System.out.println("\nClosing the program . . .");
@@ -390,6 +391,10 @@ public class MotorPHPayrollSystem {
      * The main method is the program's entry point which initializes file paths, 
      * handles the login authentication, and routes the user to the appropriate 
      * session handler based on their credentials.
+     * PURPOSE:
+     *   - Set up file paths and I/O tools
+     *   - Ask for credentials
+     *   - Route user based on role
     */
     public static void main(String[] args) {
         

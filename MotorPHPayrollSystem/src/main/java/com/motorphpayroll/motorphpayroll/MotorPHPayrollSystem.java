@@ -56,28 +56,34 @@ public class MotorPHPayrollSystem {
      * This method displays employee information and is designed to be reused 
      * in payroll_staff sessions as employee salary information header.
      * PURPOSE: Reusable header when showing employee identity information.
-     * WHY change: use "employeeFields" (clearer than generic "data")
+     * WHY change: use "employeeRecord" (clearer than generic "data")
     
     */
-    static void displayProfileHeader(String[] data) {
+  static void displayProfileHeader(String[] employeeRecord) {
         System.out.println("\n===================================");
         System.out.println("EMPLOYEE INFORMATION");
-        System.out.println("Employee #: " + data[0]);
-        System.out.println("Employee Name: " + data[1] + ", " + data[2]);
-        System.out.println("Birthday: " + data[3]);
+        System.out.println("Employee #: " + employeeRecord[0]);
+        System.out.println("Employee Name: " + employeeRecord[1] + ", " + employeeRecord[2]);
+        System.out.println("Birthday: " + employeeRecord[3]);
     }
 
     /* ---------------------- METHOD 3: DATA PARSING ---------------------------
-     * This method converts a String from the CSV file into a double number.
-     * It removes quotes and whitespace from the input to ensure correct parsing.
+    * This method converts a String value from the CSV file into a double.
+    * It removes quotes and trims whitespace from the input before parsing
+      to ensure the value is clean and ready for numerical conversion.
+    * PURPOSE: Convert a CSV String into a double safely after sanitizing it.
+    * WHY: CSV fields may include quotes, spaces, or formatting inconsistencies
     */
-    static double tryParseDouble(String value) {
-        try {
-            return Double.parseDouble(value.replace("\"", "").trim());
-        } catch (Exception e) {
-            return 0.0;
-        }
+   static double tryParseDouble(String rawValue) {
+    if (rawValue == null) return 0.0;
+
+    try {
+        String cleaned = rawValue.replace("\"", "").trim();
+        return Double.parseDouble(cleaned);
+    } catch (NumberFormatException e) {
+        return 0.0;
     }
+}
 
     /* ---------------- METHOD 4: WORKED HOURS COMPUTATION ---------------------
      * This method calculates the total hours worked by an employee during a shift.
